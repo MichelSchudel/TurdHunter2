@@ -25,8 +25,8 @@
   "nineSlice":null,
   "origin":0,
   "parent":{
-    "name":"TurdHunter2",
-    "path":"TurdHunter2.yyp",
+    "name":"sprites",
+    "path":"folders/sprites.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

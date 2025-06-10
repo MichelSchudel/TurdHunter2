@@ -1,15 +1,15 @@
 {
   "$GMObject":"",
-  "%Name":"obj_MusicController",
+  "%Name":"obj_music_controller",
   "eventList":[
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
-  "name":"obj_MusicController",
+  "name":"obj_music_controller",
   "overriddenProperties":[],
   "parent":{
-    "name":"TurdHunter2",
-    "path":"TurdHunter2.yyp",
+    "name":"objects",
+    "path":"folders/objects.yy",
   },
   "parentObjectId":null,
   "persistent":false,

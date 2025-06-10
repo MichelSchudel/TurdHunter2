@@ -1,6 +1,6 @@
 {
   "$GMSound":"v2",
-  "%Name":"ingamemusic",
+  "%Name":"snd_ingamemusic",
   "audioGroupId":{
     "name":"audiogroup_default",
     "path":"audiogroups/audiogroup_default",
@@ -12,15 +12,15 @@
   "conversionMode":0,
   "duration":8.0979595,
   "exportDir":"",
-  "name":"ingamemusic",
+  "name":"snd_ingamemusic",
   "parent":{
-    "name":"TurdHunter2",
-    "path":"TurdHunter2.yyp",
+    "name":"sounds",
+    "path":"folders/sounds.yy",
   },
   "preload":false,
   "resourceType":"GMSound",
   "resourceVersion":"2.0",
   "sampleRate":44100,
-  "soundFile":"ingamemusic.mp3",
+  "soundFile":"snd_ingamemusic.mp3",
   "volume":1.0,
 }

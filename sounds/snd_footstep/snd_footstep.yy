@@ -1,6 +1,6 @@
 {
   "$GMSound":"v2",
-  "%Name":"sound_footstep",
+  "%Name":"snd_footstep",
   "audioGroupId":{
     "name":"audiogroup_default",
     "path":"audiogroups/audiogroup_default",
@@ -12,15 +12,15 @@
   "conversionMode":0,
   "duration":0.44408163,
   "exportDir":"",
-  "name":"sound_footstep",
+  "name":"snd_footstep",
   "parent":{
-    "name":"TurdHunter2",
-    "path":"TurdHunter2.yyp",
+    "name":"sounds",
+    "path":"folders/sounds.yy",
   },
   "preload":false,
   "resourceType":"GMSound",
   "resourceVersion":"2.0",
   "sampleRate":44100,
-  "soundFile":"sound_footstep.mp3",
+  "soundFile":"snd_footstep.mp3",
   "volume":1.0,
 }

@@ -8,8 +8,8 @@
   "name":"obj_player",
   "overriddenProperties":[],
   "parent":{
-    "name":"TurdHunter2",
-    "path":"TurdHunter2.yyp",
+    "name":"objects",
+    "path":"folders/objects.yy",
   },
   "parentObjectId":null,
   "persistent":false,
