@@ -77,6 +77,7 @@ var cy = camera_get_view_y(cam) + camera_get_view_height(cam) / 2;
 
 	//todo add game over sound
     audio_play_sound(snd_explosion, 1, false);
+	audio_play_sound(snd_game_over,1, false);
 }
 
 
