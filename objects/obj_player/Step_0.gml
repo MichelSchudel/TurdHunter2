@@ -25,13 +25,13 @@ if keyboard_check(vk_down) {
 if (x == xprevious && y == yprevious) {
 	sprite_index = spr_player_idle
 	
-	  audio_stop_sound(sound_footstep);
+	  audio_stop_sound(snd_footstep);
 	  is_footstep_playing = false;
 	
 } else {
     sprite_index = spr_player_walking
 	if (!is_footstep_playing) {
-	  audio_play_sound(sound_footstep, 1, true);
+	  audio_play_sound(snd_footstep, 1, true);
 	  is_footstep_playing = true;
 	
 	}
