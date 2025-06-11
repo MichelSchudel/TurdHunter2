@@ -86,3 +86,25 @@ y = clamp(y, oy, room_height - (sh - oy));
 global.level = floor(log2(global.score / 50)) + 1;
 if (global.level < 0) global.level = 0;
 bullet_spawn_timer = 60 - global.level * 5;
+
+
+// Close explosion
+if (keyboard_check_pressed(vk_space) && player_stamina > 90) {
+	var explosion_radius = 100; // Adjust as needed
+
+    // Visual effect (optional)
+    //instance_create_layer(x, y, layer, obj_explosion_visual);
+	effect_create_above(ef_explosion, x, y, 100, c_aqua);
+
+    // Destroy all enemies within radius
+    with (obj_enemy) {
+        if (point_distance(x, y, other.x, other.y) < explosion_radius) {
+            instance_destroy();
+        }
+    }
+
+    // Play explosion sound (optional)
+    audio_play_sound(snd_explosion, 10, false);
+	
+	player_stamina = 0;
+}
