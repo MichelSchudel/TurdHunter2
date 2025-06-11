@@ -1,22 +1,39 @@
 spawn_timer -= 1;
+var amount = 5;
 
 if (spawn_timer <= 0) {
-    var spawned = 0;
-    var attempts = 0;
+	repeat(amount) {
+		var xx, yy;
 
-    while (spawned < enemy_batch_size && attempts < 100) {
-        var sx = random_range(64, room_width - 64);
-        var sy = random_range(64, room_height - 64);
+		// define camera values as variables for better readabilty
+		var cam = view_camera[0];
+		var cam_x = camera_get_view_x(cam)
+		var cam_y = camera_get_view_y(cam)
+		var cam_width = camera_get_view_width(cam)
+		var cam_height = camera_get_view_height(cam)
 
-        // Don't spawn on top of another enemy
-        if (!position_meeting(sx, sy, obj_enemy)) {
-            instance_create_layer(sx, sy, "Instances", obj_enemy);
-            spawned += 1;
-        }
+		switch (irandom_range(1, 4)) {
+		    case 1: // top edge
+		        xx = irandom_range(cam_x, cam_x + cam_width);
+				yy = cam_y;
+		    break;
+		    case 2: // bottom edge
+		        xx = irandom_range(cam_x, cam_x + cam_width);
+				yy = cam_y + cam_height;
+		    break;
+		    case 3: // left edge
+		        xx = cam_x;
+				yy = irandom_range(cam_y, cam_y + cam_height);
+		    break;
+		    case 4: // right edge
+		        xx = cam_x + cam_width;
+				yy = irandom_range(cam_y, cam_y + cam_height);
+		    break;
+		}
 
-        attempts += 1;
-    }
+		// spawn the enemy after determining its position
+		instance_create_layer(xx, yy, "Instances", obj_enemy)
+	}
 
-    // Reset the timer
     spawn_timer = spawn_interval;
 }
