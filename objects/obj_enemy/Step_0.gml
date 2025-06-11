@@ -1,4 +1,7 @@
-var dir = point_direction(x, y, obj_player.x, obj_player.y);
+var dir = 0;
+if (instance_exists(obj_player)) {
+ dir = point_direction(x, y, obj_player.x, obj_player.y);
+}
 
 new_x = x;
 new_y = y;
