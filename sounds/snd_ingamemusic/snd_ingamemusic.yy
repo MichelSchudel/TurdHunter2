@@ -10,7 +10,7 @@
   "compression":0,
   "compressionQuality":4,
   "conversionMode":0,
-  "duration":8.0979595,
+  "duration":73.53469,
   "exportDir":"",
   "name":"snd_ingamemusic",
   "parent":{

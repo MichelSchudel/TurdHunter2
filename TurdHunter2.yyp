@@ -42,6 +42,7 @@
     {"id":{"name":"snd_game_over","path":"sounds/snd_game_over/snd_game_over.yy",},},
     {"id":{"name":"snd_ingamemusic","path":"sounds/snd_ingamemusic/snd_ingamemusic.yy",},},
     {"id":{"name":"snd_single_laser","path":"sounds/snd_single_laser/snd_single_laser.yy",},},
+    {"id":{"name":"snd_title_music","path":"sounds/snd_title_music/snd_title_music.yy",},},
     {"id":{"name":"spr_background","path":"sprites/spr_background/spr_background.yy",},},
     {"id":{"name":"spr_bullet","path":"sprites/spr_bullet/spr_bullet.yy",},},
     {"id":{"name":"spr_enemy1","path":"sprites/spr_enemy1/spr_enemy1.yy",},},

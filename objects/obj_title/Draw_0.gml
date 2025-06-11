@@ -1,3 +1,7 @@
+if (!audio_is_playing(snd_title_music)) {
+  audio_play_sound(snd_title_music, 1, false);
+}
+
 // Set text color and alignment
 draw_set_font(fnt_title);       // Use your large title font
 draw_set_color(c_yellow);       // Any GameMaker color like c_red, c_white, or custom
