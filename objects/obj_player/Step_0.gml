@@ -34,29 +34,47 @@ var isIdle = (x == xprevious && y == yprevious)
 
 if (isIdle) {
 	 if health_timer <= 0 {
-            health_timer = MAX_HEALTH_TIMER_VALUE;
-    		if (player_stamina <= 100) {
-               player_stamina = player_stamina + 10;
-    		}
-           }
+		 health_timer = MAX_HEALTH_TIMER_VALUE;
+		 if (player_stamina <= 100) { 
+			 player_stamina = player_stamina + 10;
+		 }
+	}
 	sprite_index = spr_player_idle
 	audio_stop_sound(snd_footstep);
 	is_footstep_playing = false;
 } else {
      if health_timer <= 0 {
-          health_timer = MAX_HEALTH_TIMER_VALUE;
-    	  if (player_stamina >= 0) {
-    	       player_stamina = player_stamina - 5;
-          }
-        }
+		 health_timer = MAX_HEALTH_TIMER_VALUE;
+		 if (player_stamina >= 0) {
+			 player_stamina = player_stamina - 5;
+		 }
+    }
     sprite_index = spr_player_walking
+	
 	if (!is_footstep_playing) {
-	  audio_play_sound(snd_footstep, 1, true);
-	  is_footstep_playing = true;
-	
+		audio_play_sound(snd_footstep, 1, true);
+		is_footstep_playing = true;
 	}
-	
 }
 
-x = clamp(x, 0, room_width - sprite_width);
-y = clamp(y, 0, room_height - sprite_height);
+
+// Get sprite size and origin
+var sw = abs(sprite_width);
+var sh = sprite_height;
+var ox = abs(sprite_xoffset);
+var oy = sprite_yoffset;
+
+// Clamp x and y so the sprite stays inside the room
+x = clamp(x, ox, room_width - (sw - ox));
+y = clamp(y, oy, room_height - (sh - oy));
+
+
+// Shoot bullet
+if (keyboard_check_pressed(vk_space)) {
+    // Create bullet at the player's position
+    var bullet = instance_create_layer(x, y, "Instances", obj_bullet);
+    
+    // Set direction and speed if you want to shoot in a direction
+    bullet.direction = point_direction(x, y, mouse_x, mouse_y); // or use a fixed angle, e.g. 0 for right
+    bullet.speed = 8;
+}
