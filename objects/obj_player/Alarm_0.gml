@@ -2,8 +2,8 @@
 var _spawn_bullet = function() {
 	//if (hitpoints <= 0) exit;
 	instance_create_layer(x, y, "Instances", obj_bullet);
-	//audio_stop_sound(snd_bullet);
-	//audio_play_sound(snd_bullet, 10, false);
+	audio_stop_sound(snd_single_laser);
+	audio_play_sound(snd_single_laser, 10, false);
 }
 _spawn_bullet();
 
