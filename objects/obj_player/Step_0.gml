@@ -76,7 +76,7 @@ var cy = camera_get_view_y(cam) + camera_get_view_height(cam) / 2;
     instance_destroy(); // remove the player
 
 	//todo add game over sound
-	//audio_play_sound(snd_big_explosion, 1, false);
+    audio_play_sound(snd_explosion, 1, false);
 }
 
 
