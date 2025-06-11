@@ -93,7 +93,7 @@ x = clamp(x, ox, room_width - (sw - ox));
 y = clamp(y, oy, room_height - (sh - oy));
 
 // Update level and spawn timer:
-bullet_spawn_timer = 60 - global.level * 5;
+bullet_spawn_timer = max(15, 60 - global.level * 5);
 
 
 // Close explosion

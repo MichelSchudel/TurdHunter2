@@ -1,17 +1,14 @@
+// Make sure target variable exists
+if (!variable_instance_exists(id, "target")) {
+    target = noone;
+}
+
 move_speed = 8;
-move_direction = irandom_range(0, 360);
 
-var selected_enemy = instance_nearest(x, y, obj_enemy); // nearest enemy
-
-if (selected_enemy != noone) {
-	// only shoot towards enemy if they are within camera view
-	var cx = camera_get_view_x(view_camera[0]);
-	var cy = camera_get_view_y(view_camera[0]);
-	var ch = camera_get_view_height(view_camera[0]);
-	var cw = camera_get_view_width(view_camera[0]);
-
-	if point_in_rectangle(selected_enemy.x, selected_enemy.y, cx, cy, cx+cw, cy+ch) {
-		move_direction = point_direction(x, y, selected_enemy.x, selected_enemy.y);
-		image_angle = move_direction;
-	}
+// Optionally set initial direction toward target if it exists
+if (instance_exists(target)) {
+    move_direction = point_direction(x, y, target.x, target.y);
+    image_angle = move_direction;
+} else {
+    move_direction = 0; // or just leave it for now
 }

@@ -1,10 +1,10 @@
 spawn_timer -= 1;
-var amount = 4;
+var amount = 8;
 
 if (spawn_timer <= 0) {
 	 global.level++;
 	 
-	repeat(amount + global.level * 2) {
+	repeat(amount + global.level * 4) {
 		var xx, yy;
 
 		// define camera values as variables for better readabilty
