@@ -5,7 +5,7 @@ draw_set_halign(fa_center);
 draw_set_valign(fa_middle);
 
 // Draw the title
-draw_text(room_width / 2, room_height / 2 - 40, "TURD HUNTER 2");
+draw_text(room_width / 2, room_height / 2 - 40, "TREEMAGEDDON");
 
 draw_set_font(fnt_small);       // Use your large title font
 draw_set_color(c_white);       // Any GameMaker color like c_red, c_white, or custom
