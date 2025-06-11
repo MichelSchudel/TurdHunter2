@@ -1,3 +1,3 @@
-if (x < 0 || x > room_width || y < 0 || y > room_height) {
-    instance_destroy();
-}
+// move towards the detemrined direction (see create event)
+x+=lengthdir_x(move_speed, move_direction);
+y+=lengthdir_y(move_speed, move_direction);
