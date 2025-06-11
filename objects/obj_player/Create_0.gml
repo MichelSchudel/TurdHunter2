@@ -1,0 +1,6 @@
+MAX_HEALTH_TIMER_VALUE = 20;
+FAST_SPEED = 2;
+SLOW_SPEED = 1;
+
+player_stamina = 100;
+health_timer = MAX_HEALTH_TIMER_VALUE;
