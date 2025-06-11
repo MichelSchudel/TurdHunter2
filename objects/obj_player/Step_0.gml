@@ -81,3 +81,8 @@ var oy = sprite_yoffset;
 // Clamp x and y so the sprite stays inside the room
 x = clamp(x, ox, room_width - (sw - ox));
 y = clamp(y, oy, room_height - (sh - oy));
+
+// Update level and spawn timer:
+global.level = floor(log2(global.score / 50)) + 1;
+if (global.level < 0) global.level = 0;
+bullet_spawn_timer = 60 - global.level * 5;

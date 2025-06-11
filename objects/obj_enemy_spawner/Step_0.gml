@@ -1,5 +1,5 @@
 spawn_timer -= 1;
-var amount = 5;
+var amount = 5 + global.level * 2;
 
 if (spawn_timer <= 0) {
 	repeat(amount) {
