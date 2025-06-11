@@ -48,9 +48,9 @@ if (isIdle) {
 
 //Health handling
 if (isIdle) {
-	if health_timer <= 0 {
+	 if health_timer <= 0 {
 		 health_timer = MAX_HEALTH_TIMER_VALUE;
-		 if (player_stamina <= 100) { 
+		 if (player_stamina <= MAX_PLAYER_STAMINA) { 
 			 player_stamina = player_stamina + 10;
 		 }
 	}
