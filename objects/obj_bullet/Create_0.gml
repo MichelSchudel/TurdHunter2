@@ -12,5 +12,6 @@ if (selected_enemy != noone) {
 
 	if point_in_rectangle(selected_enemy.x, selected_enemy.y, cx, cy, cx+cw, cy+ch) {
 		move_direction = point_direction(x, y, selected_enemy.x, selected_enemy.y);
+		image_angle = move_direction;
 	}
 }
