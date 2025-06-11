@@ -16,9 +16,17 @@ if (!place_meeting(new_x, new_y, obj_enemy)) {
     x = new_x;
     y = new_y;
 } else {
-    // Optional: Try a slight alternative direction, or stop
+    var arc_offset = 60 * sin(degtorad(dir));
+	var new_xx = x;
+	var new_yy = y + lengthdir_y(move_speed, dir) + arc_offset;// 32 is the strength of the arc
+     
+	if (!place_meeting(new_xx, new_yy, obj_enemy)) {
+		x = new_xx;
+		y = new_yy;
+	} else {
     hspeed = 0;
     vspeed = 0;
+	}
 }
 
 //Flip the sprite if it walks to the right
