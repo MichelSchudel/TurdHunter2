@@ -2,7 +2,7 @@
 move_speed = random_range(0.1, 1.5);
 
 //health
-player_health =100;
+player_health = 100;
 
-bounty = 10 + 10 * move_speed
+bounty = 10
 
