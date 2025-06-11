@@ -66,7 +66,7 @@ if (isIdle) {
 if (player_health <= 0)
 {
     instance_create_layer(x, y, layer, obj_player_explosion);
-    //instance_destroy(); // remove the player
+    instance_destroy(); // remove the player
 	//todo add game over sound
 	//audio_play_sound(snd_big_explosion, 1, false);
 }
