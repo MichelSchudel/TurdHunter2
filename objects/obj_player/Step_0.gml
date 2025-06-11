@@ -33,28 +33,34 @@ health_timer -= 1;
 var isIdle = (x == xprevious && y == yprevious)
 
 if (isIdle) {
-	 if health_timer <= 0 {
-		 health_timer = MAX_HEALTH_TIMER_VALUE;
-		 if (player_stamina <= 100) { 
-			 player_stamina = player_stamina + 10;
-		 }
-	}
 	sprite_index = spr_player_idle
 	audio_stop_sound(snd_footstep);
 	is_footstep_playing = false;
 } else {
-     if health_timer <= 0 {
-		 health_timer = MAX_HEALTH_TIMER_VALUE;
-		 if (player_stamina >= 0) {
-			 player_stamina = player_stamina - 5;
-		 }
-    }
+     
     sprite_index = spr_player_walking
 	
 	if (!is_footstep_playing) {
 		audio_play_sound(snd_footstep, 1, true);
 		is_footstep_playing = true;
 	}
+}
+
+//Health handling
+if (isIdle) {
+	if health_timer <= 0 {
+		 health_timer = MAX_HEALTH_TIMER_VALUE;
+		 if (player_stamina <= 100) { 
+			 player_stamina = player_stamina + 10;
+		 }
+	}
+} else {
+	if health_timer <= 0 {
+		 health_timer = MAX_HEALTH_TIMER_VALUE;
+		 if (player_stamina >= 0) {
+			 player_stamina = player_stamina - 5;
+		 }
+    }
 }
 
 
