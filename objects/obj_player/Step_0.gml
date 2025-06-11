@@ -37,5 +37,12 @@ if (isIdle) {
 	
 }
 
-x = clamp(x, 0, room_width - sprite_width);
-y = clamp(y, 0, room_height - sprite_height);
+// Get sprite size and origin
+var sw = abs(sprite_width);
+var sh = sprite_height;
+var ox = abs(sprite_xoffset);
+var oy = sprite_yoffset;
+
+// Clamp x and y so the sprite stays inside the room
+x = clamp(x, ox, room_width - (sw - ox));
+y = clamp(y, oy, room_height - (sh - oy));
