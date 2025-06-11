@@ -65,8 +65,16 @@ if (isIdle) {
 
 if (player_health <= 0)
 {
+  // Get the camera ID for view 0
+var cam = view_camera[0];
+
+// Get camera position and size
+var cx = camera_get_view_x(cam) + camera_get_view_width(cam) / 2;
+var cy = camera_get_view_y(cam) + camera_get_view_height(cam) / 2;
     instance_create_layer(x, y, layer, obj_player_explosion);
+	instance_create_layer(cx,cy, layer, obj_game_over);
     instance_destroy(); // remove the player
+
 	//todo add game over sound
 	//audio_play_sound(snd_big_explosion, 1, false);
 }
