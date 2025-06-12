@@ -97,10 +97,8 @@ bullet_spawn_timer = max(30, 60 - global.level * 3); // Every level, we will sho
 
 // Trigger explosion
 if (keyboard_check_pressed(vk_space) && player_stamina > NUKE_EXPLOSION_STAMINA_THESHOLD) {
-	
-    // Visual effect (optional)
-    //instance_create_layer(x, y, layer, obj_explosion_visual);
-	effect_create_above(ef_explosion, x, y, 100, c_aqua);
+
+	effect_create_above(ef_explosion, x, y, obj_player.NUKE_EXPLOSION_RADIUS, c_aqua);
 
     // Destroy all enemies within radius
     with (obj_enemy) {

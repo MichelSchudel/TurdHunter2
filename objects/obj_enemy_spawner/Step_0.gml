@@ -4,7 +4,9 @@ var amount = 8;
 if (spawn_timer <= 0 && !global.game_over) {
 	 global.level++;
 	 
-	repeat(amount + global.level * 4) {
+	 var amount_of_enemies = amount + global.level * 3 
+	 
+	repeat(amount_of_enemies) {
 		var xx, yy;
 
 		// define camera values as variables for better readabilty

@@ -13,10 +13,10 @@ MAX_PLAYER_STAMINA = 100;
 MAX_PLAYER_HEALTH = 100;
 
 //determines the range of the nuke
-NUKE_EXPLOSION_RADIUS = 100;
+NUKE_EXPLOSION_RADIUS = 125;
 
 //determines when the nuke is available above what stamina level
-NUKE_EXPLOSION_STAMINA_THESHOLD = 90
+NUKE_EXPLOSION_STAMINA_THESHOLD = 95
 
 
 
