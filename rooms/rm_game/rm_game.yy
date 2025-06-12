@@ -25,8 +25,8 @@
   ],
   "name":"rm_game",
   "parent":{
-    "name":"TurdHunter2",
-    "path":"TurdHunter2.yyp",
+    "name":"Treemageddon",
+    "path":"Treemageddon.yyp",
   },
   "parentRoom":null,
   "physicsSettings":{

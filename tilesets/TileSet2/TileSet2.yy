@@ -12,8 +12,8 @@
   "out_tilehborder":2,
   "out_tilevborder":2,
   "parent":{
-    "name":"TurdHunter2",
-    "path":"TurdHunter2.yyp",
+    "name":"Treemageddon",
+    "path":"Treemageddon.yyp",
   },
   "resourceType":"GMTileSet",
   "resourceVersion":"2.0",
