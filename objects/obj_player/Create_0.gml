@@ -23,7 +23,7 @@ NUKE_EXPLOSION_STAMINA_THESHOLD = 90
 
 //initialize initial values
 player_stamina = MAX_PLAYER_STAMINA;
-health_timer = MAX_HEALTH_TIMER_VALUE;
+health_timer = STAMINA_TIMER_VALUE;
 player_health = MAX_PLAYER_HEALTH;
 
 global.score = 0;
