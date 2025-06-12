@@ -15,3 +15,8 @@ var center_y = view_y + view_h / 2;
 // Draw the score below the "game over" sprite, nicely centered
 draw_set_halign(fa_center);
 draw_text(center_x, center_y + 60, "Score: " + string(global.score));
+
+if (can_continue) {
+    draw_set_halign(fa_center);
+    draw_text(center_x,  center_y + 120, "Press any key to continue...");
+}
