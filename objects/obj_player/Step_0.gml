@@ -6,7 +6,6 @@ if (player_stamina <= 0) {
 	step_size = FAST_SPEED;
 }
 
-
 //Input handling
 if keyboard_check(vk_left) || keyboard_check(ord("A"))  {
   x = x - step_size;
@@ -49,14 +48,14 @@ if (isIdle) {
 //Health handling
 if (isIdle) {
 	 if health_timer <= 0 {
-		 health_timer = MAX_HEALTH_TIMER_VALUE;
+		 health_timer = STAMINA_TIMER_VALUE;
 		 if (player_stamina <= MAX_PLAYER_STAMINA) { 
 			 player_stamina = player_stamina + 10;
 		 }
 	}
 } else {
 	if health_timer <= 0 {
-		 health_timer = MAX_HEALTH_TIMER_VALUE;
+		 health_timer = STAMINA_TIMER_VALUE;
 		 if (player_stamina >= 0) {
 			 player_stamina = player_stamina - 3;
 		 }
@@ -96,17 +95,16 @@ y = clamp(y, oy, room_height - (sh - oy));
 bullet_spawn_timer = max(30, 60 - global.level * 3); // Every level, we will shoot quicker, until 30
 
 
-// Close explosion
-if (keyboard_check_pressed(vk_space) && player_stamina > 90) {
-	var explosion_radius = 100; // Adjust as needed
-
+// Trigger explosion
+if (keyboard_check_pressed(vk_space) && player_stamina > NUKE_EXPLOSION_STAMINA_THESHOLD) {
+	
     // Visual effect (optional)
     //instance_create_layer(x, y, layer, obj_explosion_visual);
 	effect_create_above(ef_explosion, x, y, 100, c_aqua);
 
     // Destroy all enemies within radius
     with (obj_enemy) {
-        if (point_distance(x, y, other.x, other.y) < explosion_radius) {
+        if (point_distance(x, y, other.x, other.y) < obj_player.NUKE_EXPLOSION_RADIUS) {
             instance_destroy();
         }
     }
@@ -114,5 +112,6 @@ if (keyboard_check_pressed(vk_space) && player_stamina > 90) {
     // Play explosion sound (optional)
     audio_play_sound(snd_explosion, 10, false);
 	
+	//After triggering a nuke, the player is temporarily exhausted
 	player_stamina = 0;
 }

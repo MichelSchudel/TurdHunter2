@@ -1,3 +1,5 @@
+//Draw the HUD, so score, health bar, stamina bar, wave level
+
 var _xx = display_get_gui_width() / 2;
 
 draw_set_font(fnt_default);
