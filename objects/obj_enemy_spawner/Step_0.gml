@@ -1,7 +1,7 @@
 spawn_timer -= 1;
 var amount = 8;
 
-if (spawn_timer <= 0) {
+if (spawn_timer <= 0 && !global.game_over) {
 	 global.level++;
 	 
 	repeat(amount + global.level * 4) {
