@@ -58,7 +58,7 @@ if (isIdle) {
 	if health_timer <= 0 {
 		 health_timer = MAX_HEALTH_TIMER_VALUE;
 		 if (player_stamina >= 0) {
-			 player_stamina = player_stamina - 5;
+			 player_stamina = player_stamina - 3;
 		 }
     }
 }
@@ -93,7 +93,7 @@ x = clamp(x, ox, room_width - (sw - ox));
 y = clamp(y, oy, room_height - (sh - oy));
 
 // Update level and spawn timer:
-bullet_spawn_timer = max(15, 60 - global.level * 5);
+bullet_spawn_timer = max(30, 60 - global.level * 3); // Every level, we will shoot quicker, until 30
 
 
 // Close explosion

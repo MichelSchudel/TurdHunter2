@@ -1,4 +1,7 @@
-level = global.level
+bullet_amount = 1 + floor((global.level - 2) / 2);
+bullet_amount = max(1, bullet_amount); // make sure it's never below 1
+bullet_amount = min(bullet_amount, 5); // make sure it's never above 5
+
 var _spawn_bullet = function() {
     // Collect all enemies with their distance
     var enemies = array_create(0);
@@ -20,7 +23,7 @@ var _spawn_bullet = function() {
 
     var bullets_fired = 0;
 
-    for (var i = 0; i < array_length(enemies) && bullets_fired < level; i++) {
+    for (var i = 0; i < array_length(enemies) && bullets_fired < bullet_amount; i++) {
         var enemy_id = enemies[i][0];
 
         // Only fire at enemies visible in camera
